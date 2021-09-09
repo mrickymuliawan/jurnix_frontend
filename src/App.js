@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AdminLayout from "./components/AdminLayout";
+import PrivateRoute from "./components/routes/PrivateRoute";
 import AccountPage from "./pages/AccountPage";
 import DashboardPage from "./pages/DashboardPage";
 import HistoryPage from "./pages/HistoryPage";
@@ -13,9 +14,12 @@ function App() {
         <Route path='/login'>
           <LoginPage />
         </Route>
-        <Route path='/dashboard'>
+        <PrivateRoute>
           <DashboardPage />
-        </Route>
+        </PrivateRoute>
+        {/* <Route path='/dashboard'>
+          <DashboardPage />
+        </Route> */}
         <Route path='/account'>
           <AccountPage />
         </Route>

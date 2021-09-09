@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import AdminLayout from '../components/AdminLayout'
-import { Button, Modal, Row, Form, Input, message, Table, Col, DatePicker } from 'antd'
+import { Button, Modal, Row, Form, Input, message, Table, Col, DatePicker, Divider } from 'antd'
+import Spacer from '../components/Spacer'
 
 function HistoryPage() {
   const tableColumns = [
@@ -55,6 +56,7 @@ function HistoryPage() {
         <h2>History</h2>
         <DatePicker.RangePicker />
       </Row>
+      <Spacer size={3} />
       <Row>
         <Col md={24}>
           <Table dataSource={dummy} columns={tableColumns} />

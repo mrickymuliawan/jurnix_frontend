@@ -8,6 +8,9 @@ const { Sider, Content } = Layout
 function AdminLayout({ children }) {
   const location = useLocation()
 
+  const removeToken = () => {
+    localStorage.removeItem('token')
+  }
   return (
     <Layout>
       <Sider style={{ height: '100vh' }}>
@@ -28,7 +31,7 @@ function AdminLayout({ children }) {
               History
             </Link>
           </Menu.Item>
-          <Menu.Item key='/logout' icon={<LogoutOutlined />}>
+          <Menu.Item key='/logout' icon={<LogoutOutlined />} onClick={removeToken}>
             Logout
           </Menu.Item>
         </Menu>

@@ -1,9 +1,12 @@
 import { Button, Col, Form, Input, Row } from 'antd'
+import axios from 'axios'
 import React from 'react'
 
 function LoginPage() {
-  const submitForm = (value) => {
-    console.log(value);
+  console.log(localStorage.getItem('token'))
+  const submitForm = async (value) => {
+    const res = await axios.post('http://localhost:3001/user/login', value)
+    localStorage.setItem('token', res.data.token)
   }
   return (
     <Row justify='center'>
